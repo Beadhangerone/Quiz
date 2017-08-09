@@ -1,0 +1,10 @@
+#variants{
+  text-align:left;
+  padding:0;
+
+  .variant{
+    &:nth-child(odd){
+      background: #E0EAF1
+    }
+  }
+}

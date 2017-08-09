@@ -1,7 +1,27 @@
-<h2 data-q-id='<%=@question.id%>'><%=@question.question%></h2>
+<!-- <h2 data-q-id='<%=@question.id%>'><%=@question.question%></h2>
 <br>
 <%@question.variants.each do |v|%>
   <span data-var-id='<%=v.id%>'><%=v.text%></span><br>
 <%end%>
 <br>
-ans: <%=@question.variants.where(is_answer:true).take.text%>
+ans: <%=answer(@question).text%> -->
+
+<center>
+  <div class="w3-card-4" style="width:90%; margin-top:50px">
+    <header class="w3-container w3-blue">
+      <h2 data-q-id='<%=@question.id%>'><%=@question.question%></h2>
+    </header>
+
+    <div class="w3-container" id='variants'>
+      <%@question.variants.each do |v|%>
+        <div class="w3-container variant" data-var-id='<%=v.id%>'>
+          <h5><%=v.text%></h5>
+        </div>
+      <%end%>
+    </div>
+
+    <footer class="w3-container w3-blue">
+      <h5>Done!</h5>
+    </footer>
+  </div>
+</center>
