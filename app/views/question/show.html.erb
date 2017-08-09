@@ -1,0 +1,7 @@
+<h2 data-q-id='<%=@question.id%>'><%=@question.question%></h2>
+<br>
+<%@question.variants.each do |v|%>
+  <span data-var-id='<%=v.id%>'><%=v.text%></span><br>
+<%end%>
+<br>
+ans: <%=@question.variants.where(is_answer:true).take.text%>

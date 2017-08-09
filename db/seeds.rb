@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+q1 = Question.create(question: '2+2=')
+vars = ['1', '2', '3', '4']
+ans = '4'
+vars.each do |v|
+  var = Variant.create(text: v, is_answer: v == ans)
+  puts var
+  q1.variants << var
+  puts q1.variants
+end
