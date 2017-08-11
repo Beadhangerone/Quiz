@@ -1,10 +1,29 @@
+// vars
+
+
 #variants{
   text-align:left;
   padding:0;
-
   .variant{
     &:nth-child(odd){
-      background: #E0EAF1
+      background: #85C5F8;
     }
+    &:nth-child(even){
+      background: #AED8FA;
+    }
+  }
+  .checked{
+    -webkit-box-shadow: 0px 0px 15px 3px yellow;
+    -moz-box-shadow: 0px 0px 15px 3px  yellow;
+    box-shadow: 0px 0px 15px 3px yellow;
+    z-index: 551;
+    position: relative;
+  }
+  .wrong{
+    -webkit-box-shadow: 0px 0px 15px 3px red;
+    -moz-box-shadow: 0px 0px 15px 3px red;
+    box-shadow: 0px 0px 15px 3px red;
+    z-index: 551;
+    position: relative;
   }
 }
