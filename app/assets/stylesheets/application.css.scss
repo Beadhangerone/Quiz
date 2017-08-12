@@ -8,3 +8,10 @@
 .pointer{
   cursor: pointer;
 }
+.alert{
+  width: 90%;
+  margin: auto;
+  display:none;
+}
+.alert.wrong{background: red;}
+.alert.right{background: green;}

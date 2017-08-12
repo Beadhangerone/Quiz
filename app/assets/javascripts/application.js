@@ -13,3 +13,15 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+
+function closeThis(elem){
+  $(elem).parent().hide(800)
+}
+
+function showAlert(color, text){
+  $('.alert').hide(1)
+  var alert = $(`.alert.w3-${color}`)
+  alert.find('#text').text(text)
+  alert.show(800)
+
+}
