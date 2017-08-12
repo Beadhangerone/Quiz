@@ -15,13 +15,23 @@ $(document).ready(function(){
         function success(data){
           var right = data['rightA']
           var client = data['clientA']
+          var nextQPath = data['nextQPath']
           $(`.variant[data-var-id=${right}]`).addClass('right')
+
           if(client == right){
             showAlert('green', 'You are right!')
           }else{
             $(`.variant[data-var-id=${client}]`).addClass('wrong')
             showAlert('red', 'You are wrong!')
           }
+
+          $('.variant').unbind('click')
+          var done = $('#done')
+          done.unbind('click')
+          done.find('h5').text('Next Question')
+          done.click(function(){
+            window.location.href = nextQPath
+          })
 
       })
     }else{
