@@ -1,0 +1,8 @@
+
+<div id="navbar">
+  <ul>
+    <%navs.each do |nav|%>
+      <li><a class='<%=active(nav[:url], nav[:contr])%>' href="<%=nav[:url]%>"><%=nav[:text]%></a></li>
+    <%end%>
+  </ul>
+</div>

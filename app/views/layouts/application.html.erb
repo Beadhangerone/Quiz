@@ -16,6 +16,16 @@
   <body>
     <div class="w3-container">
       <center>
+        <%=render partial: 'partials/navbar', locals: {
+          navs:[
+            {text: 'Home', url: root_path},
+            {text: 'Start', url: get_question_path(1), contr: true},
+            {text: 'Contact', url: nil},
+            {text: 'About', url: nil},
+          ],
+        }%>
+      </center>
+      <center>
         <div id='results'>
           <%=render partial: 'partials/alert', locals: {color: 'red'}%>
           <%=render partial: 'partials/alert', locals: {color: 'green'}%>
