@@ -1,4 +1,9 @@
 class QuestionController < ApplicationController
+  def new
+    respond_to do |format|
+      format.js
+    end
+  end
   def show
     @question = Question.find(params[:id])
   end

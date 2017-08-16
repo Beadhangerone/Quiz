@@ -11,7 +11,7 @@
 .alert{
   width: 90%;
   margin: auto;
-  display:none;
+  display: none;
 }
 .w3-green{}
 .alert{color: white;}
@@ -46,6 +46,10 @@
   .active {
       background-color: rgba(0,0,0,0.4);
   }
+}
+
+#results{
+  height: 50px;
 }
 
 

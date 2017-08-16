@@ -1,3 +1,9 @@
-<%=form_tag(create_quiz_path, method: 'post') do%>
-  
+<%=form_tag(create_quiz_path, method: 'post', for: 'new_quiz') do%>
+  <%=label_tag(:name, 'Quiz Name:')%>
+  <%= text_field_tag('quiz[name]') %><br>
+
 <%end%>
+<%= button_to('Add Question', new_question_path, id:'new_question', remote:true) %>
+<div id="test">
+
+</div>

@@ -11,7 +11,7 @@ $(document).ready(function(){
   $('#done').click(function(){
     var checked = $('.checked')[0]
     if(checked){
-      jQuery.post(document.location,
+      $.post(document.location,
         { answ_id: $(checked).attr('data-var-id') },
         function success(data){
           var right = data['rightA']
