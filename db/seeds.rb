@@ -11,7 +11,5 @@ vars = ['1', '2', '3', '4']
 ans = '4'
 vars.each do |v|
   var = Variant.create(text: v, is_answer: v == ans)
-  puts var
   q1.variants << var
-  puts q1.variants
 end

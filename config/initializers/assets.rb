@@ -11,6 +11,6 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 # controller specific assets
-%w(home question).each do |controller|
+%w(home question quiz).each do |controller|
   Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.css.scss"]
 end
