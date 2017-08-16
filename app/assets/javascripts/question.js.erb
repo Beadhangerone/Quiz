@@ -20,10 +20,10 @@ $(document).ready(function(){
           $(`.variant[data-var-id=${right}]`).addClass('right')
 
           if(client == right){
-            showAlert('green', 'You are right!')
+            showAlert('right', 'You are right!')
           }else{
             $(`.variant[data-var-id=${client}]`).addClass('wrong')
-            showAlert('red', 'You are wrong!')
+            showAlert('wrong', 'You are wrong!')
           }
 
           $('.variant').unbind('click')
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
       })
     }else{
-      showAlert('red', 'Please chose one of the variants!')
+      showAlert('wrong', 'Please choose one of the variants!')
     }
   })
 

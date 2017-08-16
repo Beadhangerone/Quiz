@@ -13,8 +13,10 @@
   margin: auto;
   display:none;
 }
-.alert.wrong{background: red;}
-.alert.right{background: green;}
+.w3-green{}
+.alert{color: white;}
+.alert.wrong{background: #F44336;}
+.alert.right{background: rgb(34,172,103);}
 
 #navbar{
   ul {
@@ -22,7 +24,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #2196F3;
   }
 
   li {
@@ -38,10 +40,15 @@
   }
 
   li a:hover:not(.active) {
-      background-color: #111;
+      background-color: rgba(0,0,0,0.2);
   }
 
   .active {
-      background-color: #4CAF50;
+      background-color: rgba(0,0,0,0.4);
   }
+}
+
+
+body{
+  background: rgb(144,208,252)
 }

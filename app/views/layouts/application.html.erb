@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
-    <%= javascript_include_tag "application", params[:controller] %>
     <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
     <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
   </head>
@@ -27,12 +25,14 @@
       </center>
       <center>
         <div id='results'>
-          <%=render partial: 'partials/alert', locals: {color: 'red'}%>
-          <%=render partial: 'partials/alert', locals: {color: 'green'}%>
+          <%=render partial: 'partials/alert', locals: {cls: 'wrong'}%>
+          <%=render partial: 'partials/alert', locals: {cls: 'right'}%>
         </div>
       </center>
 
       <%= yield %>
     </div>
+    <%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
+    <%= javascript_include_tag "application", params[:controller] %>
   </body>
 </html>

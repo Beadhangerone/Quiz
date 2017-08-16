@@ -18,9 +18,9 @@ function closeThis(elem){
   $(elem).parent().hide(800)
 }
 
-function showAlert(color, text){
+function showAlert(cls, text){
   $('.alert').hide(1)
-  var alert = $(`.alert.w3-${color}`)
+  var alert = $(`.alert.${cls}`)
   alert.find('#text').text(text)
   alert.show(800)
 
