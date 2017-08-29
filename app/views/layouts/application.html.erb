@@ -3,37 +3,30 @@
   <head>
     <title>Brand</title>
     <%= csrf_meta_tags %>
-
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
-    <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
+    <%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
   </head>
 
-  <body>
-    <div class="w3-container">
-      <center>
-        <%=render partial: 'partials/navbar', locals: {
-          navs:[
-            {text: 'Home', url: root_path},
-            {text: 'Start', url: get_question_path(1), contr: true},
-            {text: 'New Quiz', url: new_quiz_path},
-            {text: 'Contact', url: nil},
-            {text: 'About', url: nil},
-          ],
-        }%>
-      </center>
-      <center>
-        <div id='results'>
-          <%=render partial: 'partials/alert', locals: {cls: 'wrong'}%>
-          <%=render partial: 'partials/alert', locals: {cls: 'right'}%>
-        </div>
-      </center>
+  <body class="container">
+    <center>
+      <%=render partial: 'partials/navbar', locals: {
+        navs:[
+          {text: 'Home', url: root_path},
+          {text: 'Start', url: get_question_path(1), contr: true},
+          {text: 'New Quiz', url: new_quiz_path},
+          {text: 'Contact', url: nil},
+          {text: 'About', url: nil},
+        ],
+      }%>
+    </center>
+    <center>
+      <div id='results'>
+        <%=render partial: 'partials/alert', locals: {cls: 'success'}%>
+        <%=render partial: 'partials/alert', locals: {cls: 'danger'}%>
+      </div>
+    </center>
 
-      <%= yield %>
-    </div>
-    <%= stylesheet_link_tag "application", params[:controller], :media => "all" %>
+    <%= yield %>
+
     <%= javascript_include_tag "application", params[:controller] %>
   </body>
 </html>

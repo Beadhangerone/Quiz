@@ -1,19 +1,15 @@
 <center>
-  <div class="w3-card-4" style="width:90%;">
-    <header class="w3-container w3-blue">
-      <h2 data-q-id='<%=@question.id%>'><%=@question.question%></h2>
-    </header>
-
-    <div class="w3-container" id='variants'>
+  <div class="panel panel-primary question">
+    <div class="panel-heading">
+      <h2 class="panel-tiile"><%=@question.question%></h2>
+    </div>
+    <div class="panel-body list-group">
       <%@question.variants.each do |v|%>
-        <div class="w3-container variant hov-sha pointer" data-var-id='<%=v.id%>'>
-          <h5><%=v.text%></h5>
-        </div>
+      <a class="pointer list-group-item variant"><h4><%=v.text%></h4></a>
       <%end%>
     </div>
-
-    <footer class="w3-container w3-blue hov-sha pointer" id="done">
-      <h5>Done!</h5>
-    </footer>
+  </div>
+  <div class="panel panel-primary list-group">
+    <a class="pointer list-group-item"><h4>Done!</h4></a>
   </div>
 </center>

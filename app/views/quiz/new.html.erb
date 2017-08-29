@@ -1,9 +1,29 @@
-<%=form_tag(create_quiz_path, method: 'post', for: 'new_quiz') do%>
-  <%=label_tag(:name, 'Quiz Name:')%>
-  <%= text_field_tag('quiz[name]') %><br>
+<center>
+  <div class="w3-card-4 w3-container w3-blue" style="width:90%; margin-bottom:5px;">
+    <form id='new_quiz' action="<%=create_quiz_path%>" method="post">
+      <span class="w3-xxlarge">Quiz Name:</span>
+      <input class='block big-input' type="text" name="quiz[name]" value="">
+    </form>
+  </div>
+  <div class="w3-card-4 w3-blue" style="width:90%;">
+    <div class="w3-container ">
+        <span class="w3-xxlarge">Questions:
+          <i class="fa fa-plus-circle pointer" aria-hidden="true"
+            onclick="sendXHR('POST', '<%=new_question_path%>')">
+          </i>
+        </span>
+      <div id="question_form">
+        <%=render partial: 'partials/question_form'%>
+      </div>
+      <br>
+    </div>
 
-<%end%>
-<%= button_to('Add Question', new_question_path, id:'new_question', remote:true) %>
-<div id="test">
+    <footer class="hov-sha pointer w3-container done-btn" id="done">
+      <h5>Done!</h5>
+    </footer>
+  </div>
+</center>
 
-</div>
+<!-- Make my own forms!  -->
+
+<div id="questions"></div>

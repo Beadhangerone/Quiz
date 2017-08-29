@@ -11,4 +11,7 @@ module ApplicationHelper
       end
     end
   end
+  def icon(cls)
+    "<span class='glyphicon glyphicon-#{cls}' aria-hidden='true'></span>".html_safe
+  end
 end

@@ -1,35 +1,11 @@
-// vars
-
-#variants{
-  text-align:left;
-  padding:0;
-  .variant{
-    &:nth-child(odd){
-      background: #85C5F8;
-    }
-    &:nth-child(even){
-      background: #AED8FA;
-    }
-  }
+.panel{
+  margin-bottom: 5px;
+  .panel-heading h2{margin: 0}
+  .panel-body {padding: 0}
   .checked{
-    -webkit-box-shadow: 0px 0px 15px 3px #FFEB3B;
-    -moz-box-shadow: 0px 0px 15px 3px  #FFEB3B;
-    box-shadow: 0px 0px 15px 3px #FFEB3B;
-    z-index: 551;
-    position: relative;
-  }
-  .wrong{
-    -webkit-box-shadow: 0px 0px 15px 3px #F44336;
-    -moz-box-shadow: 0px 0px 15px 3px #F44336;
-    box-shadow: 0px 0px 15px 3px #F44336;
-    z-index: 551;
-    position: relative;
-  }
-  .right{
-    -webkit-box-shadow: 0px 0px 15px 3px #4CAF50;
-    -moz-box-shadow: 0px 0px 15px 3px #4CAF50;
-    box-shadow: 0px 0px 15px 3px #4CAF50;
-    z-index: 551;
-    position: relative;
+    background: #fefeb3;
+    &:hover{
+      background: #fdfd9a;
+    }
   }
 }

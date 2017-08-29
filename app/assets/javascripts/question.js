@@ -5,7 +5,6 @@ $(document).ready(function(){
     $('.variant').removeClass('checked')
     $(this).addClass('checked')
   })
-  console.log('yay');
 
   // set done btn
   $('#done').click(function(){

@@ -13,15 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 
-function closeThis(elem){
-  $(elem).parent().hide(800)
-}
+
+
+$('.close-btn').click(function(){
+  $(this).parent().fadeOut(800)
+})
 
 function showAlert(cls, text){
   $('.alert').hide(1)
-  var alert = $(`.alert.${cls}`)
+  var alert = $(`.alert.alert-${cls}`)
   alert.find('#text').text(text)
-  alert.show(800)
+  alert.fadeIn(800)
 
+}
+function sendXHR(method, url, data){
+  $.ajax({
+    method: method,
+    url: url,
+    data: data,
+  })
 }

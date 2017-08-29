@@ -1,12 +1,20 @@
 class QuestionController < ApplicationController
+
+
   def new
     respond_to do |format|
       format.js
     end
   end
+
+  def create
+    
+  end
+
   def show
     @question = Question.find(params[:id])
   end
+
   def check
     answer = Question.find(params[:id]).variants.where(is_answer: true).take()
     rightA = answer.id.to_i
@@ -20,4 +28,6 @@ class QuestionController < ApplicationController
     })
 
   end
+
+
 end
