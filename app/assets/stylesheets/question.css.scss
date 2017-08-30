@@ -2,10 +2,23 @@
   margin-bottom: 5px;
   .panel-heading h2{margin: 0}
   .panel-body {padding: 0}
+
   .checked{
-    background: #fefeb3;
+    background: #FFF5AF; //#FFF583;
     &:hover{
-      background: #fdfd9a;
+      background: #FFF591; //#fff266
+    }
+  }
+  .wrong{
+    background: #F2DEDE;
+    &:hover{
+      background: #F2DEDE !important;
+    }
+  }
+  .right{
+    background: #DFF0D8;
+    &:hover{
+      background: #DFF0D8 !important;
     }
   }
 }

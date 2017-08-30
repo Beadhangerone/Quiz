@@ -5,11 +5,11 @@
     </div>
     <div class="panel-body list-group">
       <%@question.variants.each do |v|%>
-      <a class="pointer list-group-item variant"><h4><%=v.text%></h4></a>
+      <a class="pointer list-group-item variant" data-var-id='<%=v.id%>'><h4><%=v.text%></h4></a>
       <%end%>
     </div>
   </div>
   <div class="panel panel-primary list-group">
-    <a class="pointer list-group-item"><h4>Done!</h4></a>
+    <a class="pointer list-group-item" id="done-btn"><h4>Done!</h4></a>
   </div>
 </center>
