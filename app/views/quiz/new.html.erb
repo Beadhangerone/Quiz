@@ -1,29 +1,57 @@
-<center>
-  <div class="w3-card-4 w3-container w3-blue" style="width:90%; margin-bottom:5px;">
-    <form id='new_quiz' action="<%=create_quiz_path%>" method="post">
-      <span class="w3-xxlarge">Quiz Name:</span>
-      <input class='block big-input' type="text" name="quiz[name]" value="">
-    </form>
-  </div>
-  <div class="w3-card-4 w3-blue" style="width:90%;">
-    <div class="w3-container ">
-        <span class="w3-xxlarge">Questions:
-          <i class="fa fa-plus-circle pointer" aria-hidden="true"
-            onclick="sendXHR('POST', '<%=new_question_path%>')">
-          </i>
+<div class="form-horizontal"><div class="form-group">
+
+<form for='new_quiz' action="<%=edit_quiz_path%>" method="post" data-remote='true'>
+
+<div class="row"><!-- Quiz name -->
+    <label class="col-sm-3 control-label"><h2>Quiz Name:</h2></label>
+    <div class="col-sm-8">
+      <div class="input-group">
+        <input type="text" class="form-control" name="quiz[name]" value='<%=$quiz.name%>'>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">Save!</button>
         </span>
-      <div id="question_form">
-        <%=render partial: 'partials/question_form'%>
       </div>
-      <br>
     </div>
+</div><!-- Quiz name --> <br>
 
-    <footer class="hov-sha pointer w3-container done-btn" id="done">
-      <h5>Done!</h5>
-    </footer>
+<div class="row">
+  <label class="col-sm-3 control-label"><h2>Questions:</h2></label>
+  <div class="col-sm-6"><span class="badge"><%=$quiz.questions.length%></span></div>
+  <div class="col-sm-2"><a id="new-quest-btn" class="btn btn-default" href="" role="button">Add question</a></div>
+</div><br>
+
+</form>
+
+  <div class="row">
+    <label class="col-sm-3 control-label"></label>
+    <div class="col-sm-8">
+      <ul class="list-group">
+
+        <%$quiz.questions.each do |question|%>
+          <li class="list-group-item">
+            <center><h4><%=question.question%></h4></center>
+            <ul class="list-group">
+              <%question.variants.each do |variant|%>
+                <li class="list-group-item list-group-item-success"><%=variant.text%></li>
+              <%end%>
+            </ul>
+          </li>
+        <%end%>
+
+        <li class="list-group-item">
+          <center><h4>What is the name of the current US president?</h4></center>
+          <ul class="list-group">
+            <li class="list-group-item">Barack Obama</li>
+            <li class="list-group-item">George Bush</li>
+            <li class="list-group-item list-group-item-success">Donald Trump</li>
+          </ul>
+        </li>
+
+
+      </ul>
+    </div>
   </div>
-</center>
 
-<!-- Make my own forms!  -->
+</div></div>
 
 <div id="questions"></div>

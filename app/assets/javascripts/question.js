@@ -35,7 +35,7 @@ $(document).ready(function(){
 
       })
     }else{
-      showAlert('wrong', 'Please choose one of the variants!')
+      showAlert('danger', 'Please choose one of the variants!')
     }
   })
 

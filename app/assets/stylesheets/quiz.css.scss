@@ -1,5 +1,18 @@
 form[for= 'new_quiz']{
-  label{display: block;}
-  input{display: block;}
-  button{display: block;}
+  label{
+    padding-top: 0 !important;
+    h2{
+      margin: 0;
+    }
+  }
+  .badge{
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border-radius: 45%;
+    margin-top: 0.4rem;
+    font-size: 14px;
+  }
+  #new-quest-btn{
+    width: 100%;
+  }
 }

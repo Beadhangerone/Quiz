@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get '/question/:id' => 'question#show', as: 'get_question'
   post '/question/:id' => 'question#check'
   get '/quiz/new' => 'quiz#new', as: 'new_quiz'
-  post '/quiz/new' => 'quiz#create', as:'create_quiz'
+  post '/quiz/edit' => 'quiz#edit', as:'edit_quiz'
 end
