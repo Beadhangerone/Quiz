@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+qz = Quiz.new(name:'try!')
 q1 = Question.create(question: '2+2=')
 vars = ['1', '2', '3', '4']
 ans = '4'
@@ -13,3 +14,7 @@ vars.each do |v|
   var = Variant.create(text: v, is_answer: v == ans)
   q1.variants << var
 end
+qz.questions << q1
+
+puts qz
+puts qz.questions.take

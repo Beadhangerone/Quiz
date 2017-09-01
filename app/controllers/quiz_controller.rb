@@ -4,6 +4,9 @@ class QuizController < ApplicationController
   end
   def edit
     $quiz.assign_attributes(quiz_params)
+    respond_to do |format|
+      format.js
+    end
   end
 
   private

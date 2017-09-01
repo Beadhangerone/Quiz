@@ -1,3 +1,4 @@
+// question#show
 .panel{
   margin-bottom: 5px;
   .panel-heading h2{margin: 0}
@@ -21,4 +22,17 @@
       background: #DFF0D8 !important;
     }
   }
+}
+
+// question#new
+form[for='new_question'] {
+  .form-group{margin-bottom: 0;}
+  .panel-heading{
+    padding: 10px 0px;
+  }
+  .panel-body{
+    .control-label{margin-top: -10px;}
+    padding-top: 10px;
+  }
+
 }

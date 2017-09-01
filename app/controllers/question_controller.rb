@@ -2,13 +2,11 @@ class QuestionController < ApplicationController
 
 
   def new
-    respond_to do |format|
-      format.js
-    end
+    $question = Question.new
   end
 
   def create
-    
+
   end
 
   def show

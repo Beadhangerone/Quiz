@@ -1,0 +1,51 @@
+<form for='new_question' action="<%=create_question_path%>" method="post">
+    <div class="panel panel-default">
+
+      <div class="panel-heading"><!-- Question text -->
+        <div class="form-horizontal"><div class="form-group">
+            <div class="row">
+              <label class="col-sm-3 control-label"><h2>Question Text:</h2></label>
+              <div class="col-sm-8">
+                <div class="input-group input-group-lg">
+                  <input type="text" class="form-control" name="question[question]" value='<%=$question.question%>'>
+                  <span class="input-group-btn">                                             <!--q.text -->
+                    <button class="btn btn-default" type="submit">Save!</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+        </div></div>
+      </div>
+      <div class="panel-body">
+        <div class="form-horizontal"><div class="form-group">
+              <div class="row">
+                <label class="col-sm-3 control-label"><h4>Variant Text:</h4></label>
+                <div class="col-sm-8">
+                  <div class="input-group input-group-sm">
+                    <input type="text" class="form-control" name="variant[text]">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">Add!</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+        </div></div>
+      </div>
+
+
+    </div>
+
+
+</form>
+
+<div class="panel panel-default"><!-- variants -->
+  <div class="panel-body list-group">
+    <%$question.variants.each do |v|%>
+    <a class="pointer list-group-item" data-var-id='<%=v.id%>'><%=v.text%></a>
+    <%end%>
+  </div>
+</div>
+<!--
+<div class="panel panel-default list-group">
+  <a class="pointer list-group-item" id="done-btn"><h4>Done!</h4></a>
+</div> -->
