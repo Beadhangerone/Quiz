@@ -14,4 +14,8 @@ module ApplicationHelper
   def icon(cls)
     "<span class='glyphicon glyphicon-#{cls}' aria-hidden='true'></span>".html_safe
   end
+
+  def _method(method)
+    "<input name='_method' type='hidden' value='#{method}' />".html_safe
+  end
 end

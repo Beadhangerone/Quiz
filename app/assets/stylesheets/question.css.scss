@@ -23,16 +23,16 @@
     }
   }
 }
+.form-group{margin-bottom: 0;}
 
 // question#new
 form[for='new_question'] {
-  .form-group{margin-bottom: 0;}
   .panel-heading{
     padding: 10px 0px;
   }
-  .panel-body{
-    .control-label{margin-top: -10px;}
-    padding-top: 10px;
-  }
 
+}
+form[for='new_variant']{
+  padding-top: 7px;
+  .control-label{margin-top: -10px;}
 }

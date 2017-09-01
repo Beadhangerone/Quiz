@@ -2,11 +2,16 @@ class QuestionController < ApplicationController
 
 
   def new
-    $question = Question.new
+    $question = $quiz.questions.new
+    $question.save
   end
 
-  def create
-
+  def edit
+    if $question.update_attributes(question_params)
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   def show
@@ -25,6 +30,11 @@ class QuestionController < ApplicationController
         'nextQPath': nextQPath,
     })
 
+  end
+
+  private
+  def question_params
+    params.require(:question).permit(:question)
   end
 
 

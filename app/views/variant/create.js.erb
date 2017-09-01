@@ -1,0 +1,5 @@
+// $(document).ready(function(){
+// }
+var item = $('<a></a>').attr('class', 'pointer list-group-item').text('<%=@variant.text%>')
+$('#variants').prepend(item)
+showAlert('success', 'Saved Successful!')

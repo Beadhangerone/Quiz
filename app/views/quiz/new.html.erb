@@ -1,24 +1,28 @@
 <div class="form-horizontal"><div class="form-group">
 
 <form for='new_quiz' action="<%=edit_quiz_path%>" method="post" data-remote='true'>
+    <%=_method('put')%>
+    <div class="row"><!-- Quiz name -->
+        <label class="col-sm-3 control-label"><h2>Quiz Name:</h2></label>
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input type="text" class="form-control" name="quiz[name]" placeholder="At least 4 chars" value='<%=$quiz.name%>'>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">Save!</button>
+            </span>
+          </div>
+        </div>
+    </div><!-- Quiz name --> <br>
 
-<div class="row"><!-- Quiz name -->
-    <label class="col-sm-3 control-label"><h2>Quiz Name:</h2></label>
-    <div class="col-sm-8">
-      <div class="input-group">
-        <input type="text" class="form-control" name="quiz[name]" value='<%=$quiz.name%>'>
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">Save!</button>
-        </span>
+    <div class="row">
+      <label class="col-sm-3 control-label"><h2>Questions:</h2></label>
+      <div class="col-sm-6"><span class="badge"><%=$quiz.questions.length%></span></div>
+      <div class="col-sm-2">
+        <a id="new-quest-btn" class="btn btn-default" href="<%=new_question_path%>" role="button">
+          Add question
+        </a>
       </div>
-    </div>
-</div><!-- Quiz name --> <br>
-
-<div class="row">
-  <label class="col-sm-3 control-label"><h2>Questions:</h2></label>
-  <div class="col-sm-6"><span class="badge"><%=$quiz.questions.length%></span></div>
-  <div class="col-sm-2"><a id="new-quest-btn" class="btn btn-default" href="<%=new_question_path%>" role="button">Add question</a></div>
-</div><br>
+    </div><br>
 
 </form>
 
@@ -37,16 +41,6 @@
             </ul>
           </li>
         <%end%>
-
-        <li class="list-group-item">
-          <center><h4>What is the name of the current US president?</h4></center>
-          <ul class="list-group">
-            <li class="list-group-item">Barack Obama</li>
-            <li class="list-group-item">George Bush</li>
-            <li class="list-group-item list-group-item-success">Donald Trump</li>
-          </ul>
-        </li>
-
 
       </ul>
     </div>
