@@ -1,4 +1,13 @@
 class VariantController < ApplicationController
+
+  def new
+    @variant = params[:variant][:text]
+    $variants << @variant # Validate the input
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @variant = $question.variants.create(variant_params)
     if @variant

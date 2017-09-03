@@ -1,25 +1,20 @@
 <div class="panel panel-default">
+
   <div class="panel-heading"><!-- Question text -->
-    <form for='edit_question' action="<%=edit_question_path%>" method="post" data-remote='true'>
-      <%=_method('put')%>
-        <div class="form-horizontal"><div class="form-group">
+    <form id="new_question" class="form-horizontal" for='new_question' action="<%=create_question_path%>" method="post">
+        <div class="form-group">
             <div class="row">
                 <label class="col-sm-3 control-label"><h2>Question Text:</h2></label>
                 <div class="col-sm-8">
-                  <div class="input-group input-group-lg">
-                    <input type="text" class="form-control" name="question[question]" value='<%=$question.question%>'>
-                    <span class="input-group-btn">                                             <!--q.text -->
-                      <button class="btn btn-default" type="submit">Save!</button>
-                    </span>
-                  </div>
+                    <input type="text" class="form-control input-lg" name="question[question]">
                 </div>
             </div>
-        </div></div>
+       </div>
     </form>
   </div>
 
   <div class="panel-body">
-    <form for='new_variant' action="<%=create_variant_path%>" method="post" data-remote='true'>
+    <form for='new_variant' action="<%=new_variant_path%>" method="post" data-remote='true'>
       <div class="form-horizontal"><div class="form-group">
             <div class="row">
               <label class="col-sm-3 control-label"><h4>Variant Text:</h4></label>
@@ -36,18 +31,17 @@
     </form>
   </div>
 
-
 </div>
-
-
 
 <div class="panel panel-default"><!-- variants -->
   <div class="panel-body list-group" id='variants'>
-    <%$question.variants.reverse.each do |v|%>
-    <a class="pointer list-group-item"><%=v.text%></a>
+    <%$variants.reverse.each do |v|%>
+      <a class="pointer list-group-item"><%=v%></a>
     <%end%>
   </div>
 </div>
+
+<center><button class="btn btn-default" form='new_question' type="submit">Save!</button></center>
 <!--
 <div class="panel panel-default list-group">
   <a class="pointer list-group-item" id="done-btn"><h4>Done!</h4></a>

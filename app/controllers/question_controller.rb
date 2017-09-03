@@ -1,17 +1,20 @@
 class QuestionController < ApplicationController
 
-
   def new
-    $question = $quiz.questions.new
-    $question.save
+    $variants = $variants ? $variants : []
   end
 
-  def edit
-    if $question.update_attributes(question_params)
-      respond_to do |format|
-        format.js
-      end
+  def create
+    question = Question.create(question_params)
+    $quiz.questions << question
+
+    $variants.each do |var|
+      variant = Variant.create(text: var)
+      question.variants << variant
     end
+
+    $variants = nil
+    redirect_to new_quiz_path
   end
 
   def show

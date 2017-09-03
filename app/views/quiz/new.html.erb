@@ -29,23 +29,21 @@
   <div class="row">
     <label class="col-sm-3 control-label"></label>
     <div class="col-sm-8">
-      <ul class="list-group">
 
         <%$quiz.questions.each do |question|%>
-          <li class="list-group-item">
-            <center><h4><%=question.question%></h4></center>
-            <ul class="list-group">
-              <%question.variants.each do |variant|%>
-                <li class="list-group-item list-group-item-success"><%=variant.text%></li>
-              <%end%>
-            </ul>
-          </li>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <center><h4><%=question.question%></h4></center>
+              <ul class="list-group">
+                <%question.variants.each do |variant|%>
+                  <li class="list-group-item list-group-item-success"><%=variant.text%></li>
+                <%end%>
+              </ul>
+            </li>
+          </ul>
         <%end%>
 
-      </ul>
     </div>
   </div>
 
 </div></div>
-
-<div id="questions"></div>

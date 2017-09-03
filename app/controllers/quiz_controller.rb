@@ -1,9 +1,7 @@
 class QuizController < ApplicationController
 
   def new
-    $quiz = $quiz? $quiz : Quiz.create
-    puts $quiz.inspect
-
+    $quiz = $quiz ? $quiz : Quiz.create
   end
   def edit
     if $quiz.update_attributes(quiz_params)
