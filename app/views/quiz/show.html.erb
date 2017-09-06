@@ -31,11 +31,21 @@
     <div class="col-sm-8">
 
         <%$quiz.questions.each do |question|%>
+          <%puts '------------------------------'%>
+          <%puts('question.text', "#{question.question}")%>
           <ul class="list-group">
             <li class="list-group-item">
-              <center><h4><%=question.question%></h4></center>
+              <center><h4>
+                <%=question.question%>
+                <a href="<%=edit_question_path(question)%>" class="pull-right btn btn-default">
+                  Edit
+                </a>
+              </h4></center>
               <ul class="list-group">
                 <%question.variants.each do |variant|%>
+                <%puts '--------'%>
+                <%puts('question.variant.text', "#{variant.text}")%>
+                <%puts '--------'%>
                   <li class="list-group-item list-group-item-success"><%=variant.text%></li>
                 <%end%>
               </ul>

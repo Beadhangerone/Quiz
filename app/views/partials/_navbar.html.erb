@@ -10,7 +10,7 @@
       <ul class="nav navbar-nav">
         <%navs.each do |nav|%>
           <li class='<%=active(nav[:url], nav[:contr])%>'>
-            <a href="<%=nav[:url]%>"><%=nav[:text]%></a>
+            <a href="<%=nav[:url][0]%>"><%=nav[:text]%></a>
           </li>
         <%end%>
       </ul>

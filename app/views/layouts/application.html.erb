@@ -11,11 +11,11 @@
     <center>
       <%=render partial: 'partials/navbar', locals: {
         navs:[
-          {text: 'Home', url: root_path},
-          {text: 'Start', url: get_question_path(1), contr: true},
-          {text: 'New Quiz', url: new_quiz_path},
-          {text: 'Contact', url: nil},
-          {text: 'About', url: nil},
+          {text: 'Home', url: [root_path]},
+          {text: 'Start', url: [get_question_path(1)]},
+          {text: 'New Quiz', url: [new_quiz_path, new_question_path]},
+          {text: 'Contact', url: []},
+          {text: 'About', url: []},
         ],
       }%>
     </center>

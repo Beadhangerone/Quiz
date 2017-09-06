@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+
+  <div class="panel-heading"><!-- Question text -->
+    <form id="edit_question" class="form-horizontal" for='edit_question' action="<%=update_question_path%>" method="post">
+
+        <div class="form-group">
+            <div class="row">
+                <label class="col-sm-3 control-label"><h2>Question Text:</h2></label>
+                <div class="col-sm-8">
+                    <input value='<%=$question.question%>' type="text" class="form-control input-lg" name="question[question]">
+                </div>
+            </div>
+       </div>
+    </form>
+  </div>
+
+  <div class="panel-body">
+    <form for='new_variant' action="<%=new_variant_path%>" method="post" data-remote='true'>
+      <div class="form-horizontal"><div class="form-group">
+            <div class="row">
+              <label class="col-sm-3 control-label"><h4>Variant Text:</h4></label>
+              <div class="col-sm-8">
+                <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" name="variant[text]">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Add!</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+      </div></div>
+    </form>
+  </div>
+
+</div>
+
+<div class="panel panel-default"><!-- variants -->
+  <div class="panel-body list-group" id='variants'>
+    <%$question.variants.reverse.each do |v|%>
+      <a class="pointer list-group-item"><%=v.text%></a>
+    <%end%>
+  </div>
+</div>
+
+<center><button class="btn btn-default" form='edit_question' type="submit">Save!</button></center>

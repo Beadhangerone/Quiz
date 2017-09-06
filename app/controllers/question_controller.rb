@@ -17,6 +17,25 @@ class QuestionController < ApplicationController
     redirect_to new_quiz_path
   end
 
+  def edit
+    $question = $quiz.questions.find(params[:id])
+    $variants = []
+  end
+
+  def update
+    $question = $quiz.questions.find(params[:id])
+    if $question.update(question_params)
+      debug('variants', $variants)
+      $variants.each do |var|
+        variant = Variant.new(text: var)
+        $question.variants << variant
+      end
+      debug('question.variants', $question.variants)
+      $question = nil
+      redirect_to new_quiz_path
+    end
+  end
+
   def show
     @question = Question.find(params[:id])
   end
