@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'question/:id/update' => 'question#update', as: 'update_question'
   post 'variant/new' => 'variant#new', as: 'new_variant'
   post 'variant/create' => 'variant#create', as: 'create_variant'
+  delete 'variant/delete' => 'variant#delete', as: 'delete_variant'
   get 'question/:id' => 'question#show', as: 'get_question'
   post 'question/:id' => 'question#check'
   get 'quiz/new' => 'quiz#new', as: 'new_quiz'

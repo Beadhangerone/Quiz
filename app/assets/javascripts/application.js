@@ -17,9 +17,9 @@
 
 
 
-$('.close-btn').click(function(){
-  $(this).parent().fadeOut(800)
-})
+function closeThis(elem){
+  $(elem).fadeOut(800)
+}
 
 function showAlert(cls, text){
   $('.alert').hide(1)
@@ -28,10 +28,11 @@ function showAlert(cls, text){
   alert.fadeIn(800)
 
 }
-function sendXHR(method, url, data){
+function sendXHR(method, url, data, success){
   $.ajax({
     method: method,
     url: url,
     data: data,
+    success: success,
   })
 }

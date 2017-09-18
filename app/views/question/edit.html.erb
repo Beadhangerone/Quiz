@@ -34,12 +34,9 @@
 
 </div>
 
-<div class="panel panel-default"><!-- variants -->
-  <div class="panel-body list-group" id='variants'>
-    <%$question.variants.reverse.each do |v|%>
-      <a class="pointer list-group-item"><%=v.text%></a>
-    <%end%>
-  </div>
+<div id="variants">
+  <%=render partial:'partials/vars_edit', locals: {question:$question, variants: $variants}%>
 </div>
+
 
 <center><button class="btn btn-default" form='edit_question' type="submit">Save!</button></center>

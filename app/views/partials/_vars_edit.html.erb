@@ -1,0 +1,19 @@
+<div class="panel panel-default"><!-- variants -->
+  <div class="panel-body list-group">
+
+    <%variants.reverse.each_with_index do |v, i|%>
+      <a class="pointer list-group-item" data-ix='<%=variants.length - i-1%>'>
+        <%=v.text%>
+        <%=icon('remove pull-right', "deleteVar( $(this) )")%>
+      </a>
+    <%end%>
+
+    <%question.variants.reverse.each do |v|%>
+      <a class="pointer list-group-item" data-id='<%=v.id%>'>
+        <%=v.text%>
+        <%=icon('remove pull-right', "deleteVar( $(this) )")%>
+      </a>
+    <%end%>
+
+  </div>
+</div>
