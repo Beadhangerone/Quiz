@@ -41,10 +41,10 @@ $(document).ready(function(){
 
 });
 
-function deleteVar( _this ){
+function deleteVar( _this, q_id){
   var parent = _this.parent()
   if (confirm('This variant will be deleted! Are you shure?')){
-    sendXHR('DELETE', '/variant/delete', {var_id: parent.data('id'), var_ix:parent.data('ix')},
+    sendXHR('DELETE', '/variant/delete', {q_id: q_id, var_id: parent.data('id'), var_ix:parent.data('ix')},
       function(){
         closeThis(parent)
         showAlert('success', 'Deleted!')

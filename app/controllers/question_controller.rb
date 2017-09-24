@@ -1,23 +1,20 @@
 class QuestionController < ApplicationController
 
   def new
-    $question = $question ? $question : Question.new
-    $variants = $variants ? $variants : []
-    respond_to do |format|
-      # format.js     make action specific scripts
-      format.html
-    end
+    $question = Question.new
+    $variants = []
+    #make action specific scripts
   end
 
   def create
-    $quiz.questions << $question
-    $variants.each do |var|
-      $question.variants << var
-    end
-    if $question.update(question_params)
-      $question = nil
-      $variants = nil
-      redirect_to new_quiz_path
+    $question.update(question_params)
+    if $quiz.questions << $question
+      $variants.each do |var|
+        $question.variants << var
+      end
+        $question = nil
+        $variants = nil
+        redirect_to new_quiz_path
     end
   end
 
@@ -27,10 +24,11 @@ class QuestionController < ApplicationController
   end
 
   def update
-    $variants.each do |var|
-      $question.variants << var
-    end
-    if $question.update(question_params)
+    $question.update(question_params)
+    if $question.save()
+      $variants.each do |var|
+        $question.variants << var
+      end
       $question = nil
       $variants = nil
       redirect_to new_quiz_path

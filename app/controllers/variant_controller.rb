@@ -12,9 +12,14 @@ class VariantController < ApplicationController
     # $question.variants << @variant # Validate the input
   end
 
-  def delete     # BUG!!! new after delete!!!! 
+  def delete
     if params[:var_id]
-      $question.variants.find(params[:var_id]).delete
+      $question = Question.find(params[:q_id].to_i)
+      variant = $question.variants.find(params[:var_id].to_i)
+      debug('deleted var by id', variant)
+      variant.destroy
+      variant.save
+      puts('question.vars', $question.variants.inspect)
     elsif params[:var_ix]
       $variants.delete_at(params[:var_ix].to_i)
     end

@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   post 'question/:id' => 'question#check'
   get 'quiz/new' => 'quiz#new', as: 'new_quiz'
   get 'quiz/:id/show' => 'quiz#show', as: 'show_quiz'
-  put 'quiz/edit' => 'quiz#edit', as:'edit_quiz'
+  get 'quiz/:id/edit' => 'quiz#edit', as:'edit_quiz'
 end
