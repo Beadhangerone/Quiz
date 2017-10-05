@@ -15,8 +15,17 @@ module ApplicationHelper
       end
     end
   end
-  def icon(cls, act)
-    "<span class='glyphicon glyphicon-#{cls}' onclick='#{act}' aria-hidden='true'></span>".html_safe
+  def icon(a)
+    cls = a[:cls]
+    clk = a[:clk]
+    hov = a[:hov]
+    res = "<span class='glyphicon glyphicon-#{cls}' aria-hidden='true' "
+
+    res += "onclick='#{clk}' " if clk
+    res += "onmouseover='#{hov}' " if hov
+
+    res += '></span>'
+    return res.html_safe
   end
 
   def _method(method)

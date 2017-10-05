@@ -36,3 +36,22 @@ function sendXHR(method, url, data, success){
     success: success,
   })
 }
+
+function changeIcon(elem, cls){
+  var class_arr = elem.attr('class').split(' ')
+  for (var i in class_arr){
+    var clas = class_arr[i]
+    if (clas.substr(0,10)=='glyphicon-'){
+      var oldC = clas
+      var newC = clas.replace(clas.substr(10),cls)
+      elem.addClass(newC)
+      elem.removeClass(oldC)
+
+      elem.mouseout(function(){
+        elem.addClass(oldC)
+        elem.removeClass(newC)
+      })
+      break
+    }
+  }
+}

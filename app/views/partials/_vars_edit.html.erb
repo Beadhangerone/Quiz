@@ -3,8 +3,9 @@
     <%if variants%>
       <%variants.reverse.each_with_index do |v, i|%>
         <a class="pointer list-group-item" data-ix='<%=variants.length - i-1%>'>
+          <%=icon({ cls:'unchecked pull-left', hov:'changeIcon($(this), "check")' })%>
           <%=v.text%>
-          <%=icon('remove pull-right', "deleteVar( $(this) )")%>
+          <%=icon({cls:'remove pull-right', clk:"deleteVar( $(this) )"})%>
         </a>
       <%end%>
     <%end%>
@@ -12,8 +13,9 @@
     <%if question%>
       <%question.variants.reverse.each do |v|%>
         <a class="pointer list-group-item" data-id='<%=v.id%>'>
+          <%=icon({ cls:'unchecked pull-left', hov:'changeIcon($(this), "check")' })%>
           <%=v.text%>
-          <%=icon('remove pull-right', "deleteVar( $(this), #{question.id} )")%>
+          <%=icon({ cls:'remove pull-right', clk:'deleteVar( $(this), #{question.id})' })%>
         </a>
       <%end%>
     <%end%>

@@ -9,7 +9,6 @@ class VariantController < ApplicationController
   end
 
   def create
-    # $question.variants << @variant # Validate the input
   end
 
   def delete
